@@ -1,2 +1,2 @@
-def somaf(a, b):
-    return a + b
+def somaf(a, b): 
+    return a + b 
