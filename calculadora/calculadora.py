@@ -28,5 +28,9 @@ elif operador == "**":
     resultado = potencia.potenciaf(n1, n2)
     print("Resultado:", resultado)
     
+elif operador == "//":
+    resultado = restDivisao.resto_divisao(n1,n2)
+    print("Resultado:", resultado)    
+    
 else:
     print("Operador inválido")
