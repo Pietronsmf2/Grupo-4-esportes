@@ -22,6 +22,10 @@ elif operador == "*":
 elif operador == "/":
     resultado = divide.dividef(n1, n2)
     print("Resultado:", resultado)
-
+    
+elif operador == "**":
+    resultado = potencia.potenciaf(n1, n2)
+    print("Resultado:", resultado)
+    
 else:
     print("Operador inválido")
