@@ -1,54 +1,29 @@
-Implementações Melhores do que a dos Concorrentes - Motion Club
-================================================================
+# Implementações Melhores do que a dos Concorrentes – Motion Club
 
-Referência de Concorrentes:
-- Strava: forte em rastreamento de rotas e métricas de performance
-- Nike Run Club: bom em planos de treino guiados e motivação por voz
-- ClassPass: excelente em variedade de modalidades por assinatura
-- Gympass (Wellhub): ampla rede de academias parceiras
-- Meetup: bom em descoberta de grupos por interesse
+Concorrentes analisados:
+Strava, Nike Run Club, ClassPass, Gympass (Wellhub) e Meetup.
 
-----------------------------------------------------------------
+I01 – Sistema de match entre usuários
+Os concorrentes focam mais em grupos gerais.
+O Motion Club conecta usuários com interesses, nível e localização parecidos.
 
-1. SISTEMA DE MATCH ENTRE USUÁRIOS POR INTERESSE E LOCALIZAÇÃO
-   - Concorrente de referência: Meetup (apenas grupos, sem match individual)
-   - Nossa implementação: algoritmo que conecta usuários com perfis compatíveis
-     (nível, disponibilidade, tipo de atividade, bairro) para praticar juntos
-   - Por que é melhor: personalização real, não apenas grupos genéricos
+I02 – Mapa interativo de atividades
+Os concorrentes mostram listas ou rotas estáticas.
+O Motion Club utiliza um mapa com eventos e grupos em tempo real.
 
-2. MAPA INTERATIVO DE EVENTOS E ATIVIDADES EM TEMPO REAL
-   - Concorrente de referência: Strava (rotas estáticas), Meetup (lista de eventos)
-   - Nossa implementação: mapa dinâmico com filtros por modalidade, horário e distância,
-     mostrando eventos abertos e grupos ativos na região do usuário em tempo real
-   - Por que é melhor: visual, intuitivo e geolocalizado — não é só uma lista de texto
+I03 – Progresso baseado em participação
+Os concorrentes focam em desempenho individual.
+O Motion Club valoriza participação em grupo e diversidade de atividades.
 
-3. PERFIL DE PROGRESSO FOCADO EM PARTICIPAÇÃO, NÃO SÓ PERFORMANCE
-   - Concorrente de referência: Strava e Nike Run Club (medalhas por distância/pace)
-   - Nossa implementação: conquistas baseadas em participação social — quantas pessoas
-     você ajudou a se mover, quantos grupos participou, diversidade de atividades
-   - Por que é melhor: inclusivo para iniciantes, não pune quem não é atleta
+I04 – Agenda integrada
+Os concorrentes não centralizam todos os compromissos.
+O Motion Club reúne eventos e atividades em uma agenda única com lembretes.
 
-4. AGENDA INTEGRADA E LEMBRETES PERSONALIZADOS
-   - Concorrente de referência: ClassPass (reservas avulsas, sem agenda unificada)
-   - Nossa implementação: agenda pessoal dentro do app integrando todos os eventos
-     e aulas marcadas, com lembretes e sugestões baseadas no histórico do usuário
-   - Por que é melhor: elimina a fricção de gerenciar compromissos em vários lugares
+I05 – Comunicação entre usuários
+Os concorrentes possuem interação limitada.
+O Motion Club permite chat entre participantes e grupos.
 
-5. CANAL DE COMUNICAÇÃO DIRETO ENTRE PARTICIPANTES
-   - Concorrente de referência: Strava (apenas comentários em atividades)
-   - Nossa implementação: chat em grupo por evento/atividade, com possibilidade de
-     criar grupos privados para times e parceiros fixos de treino
-   - Por que é melhor: comunicação fluida e contextualizada dentro do próprio app
+I06 – Onboarding personalizado
+Os concorrentes têm onboarding mais genérico.
+O Motion Club identifica interesses e sugere atividades desde o início.
 
-6. ONBOARDING INTELIGENTE PARA INICIANTES
-   - Concorrente de referência: Nike Run Club (onboarding focado em corrida)
-   - Nossa implementação: quiz inicial que identifica interesses, nível e objetivos
-     do usuário para sugerir atividades, grupos e eventos personalizados desde o primeiro acesso
-   - Por que é melhor: reduz abandono de novos usuários e acelera o engajamento
-
-----------------------------------------------------------------
-
-Conclusão:
-O Motion Club não apenas replica o que os concorrentes fazem — ele resolve lacunas
-reais: match personalizado, mapa ao vivo, inclusão de iniciantes e comunicação integrada,
-tudo em um único app focado em movimento coletivo.
