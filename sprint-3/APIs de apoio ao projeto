@@ -5,7 +5,7 @@ API01 — Strava API
     Permite acessar atividades, rotas GPS e dados sociais de usuários do Strava. Possibilitaria a importação do histórico de atividades para o Motion Club.
 
 API02 — Terra API
-    API unificada que conecta com mais de 100 wearables e apps de saúde como Garmin, Fitbit, Polar e Oura. Evita a necessidade de integrar cada dispositivo separadamente.
+    API unificada que conecta com relógios, e mais de 100 apps de saúde como Garmin, Fitbit, Polar e Oura. Evita a necessidade de integrar cada dispositivo separadamente.
 
 API03 — Mapbox
     Oferece mapas customizáveis, renderização de rotas, perfil de elevação e heatmaps. Seria utilizado para exibir as rotas das atividades e mapas de calor dos treinos.
@@ -14,7 +14,7 @@ API04 — Stream (getstream.io)
     API de feeds de atividade e chat em tempo real. Resolveria a parte social do app, como timeline, curtidas, comentários e chat entre membros de grupos.
 
 API05 — Google Fit REST API
-    Permite ler dados de fitness como passos, calorias e frequência cardíaca de usuários Android que não possuem wearable dedicado.
+    Permite ler dados de fitness como passos, calorias e frequência cardíaca de usuários Android que não possuem relógio ou anel de marcação dedicado.
 
 API06 — Apple HealthKit
     Centraliza dados de saúde e fitness do iPhone e Apple Watch. Essencial para cobrir a base de usuários iOS da plataforma.
