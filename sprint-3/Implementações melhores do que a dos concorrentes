@@ -1,29 +1,35 @@
-# Implementações Melhores do que a dos Concorrentes – Motion Club
+# Implementações do Sistema – Motion Club (sprint 3)
 
-Concorrentes analisados:
-Strava, Nike Run Club, ClassPass, Gympass (Wellhub) e Meetup.
+Concorrentes Analisados:
+- Strava
+- Nike Run Club / Nike Training Club
+- ClassPass
+- Gympass (Wellhub)
+- Meetup
 
-I01 – Sistema de match entre usuários
-Os concorrentes focam mais em grupos gerais.
-O Motion Club conecta usuários com interesses, nível e localização parecidos.
+I01 – Sistema de recomendação de usuários
+O sistema sugere pessoas com base em interesses em comum, nível de atividade e localização.
 
 I02 – Mapa interativo de atividades
-Os concorrentes mostram listas ou rotas estáticas.
-O Motion Club utiliza um mapa com eventos e grupos em tempo real.
+O sistema apresenta um mapa com eventos e grupos ativos próximos ao usuário, com filtros por esporte, horário e distância.
 
-I03 – Progresso baseado em participação
-Os concorrentes focam em desempenho individual.
-O Motion Club valoriza participação em grupo e diversidade de atividades.
+I03 – Perfil com histórico de participação
+Cada usuário possui um perfil com registro de atividades realizadas, grupos participados e eventos frequentados.
 
-I04 – Agenda integrada
-Os concorrentes não centralizam todos os compromissos.
-O Motion Club reúne eventos e atividades em uma agenda única com lembretes.
+I04 – Agenda pessoal integrada
+O sistema disponibiliza uma agenda onde o usuário pode visualizar todos os eventos e grupos dos quais participa.
 
-I05 – Comunicação entre usuários
-Os concorrentes possuem interação limitada.
-O Motion Club permite chat entre participantes e grupos.
+I05 – Sistema de chat
+O sistema permite comunicação entre participantes de um grupo ou evento por meio de mensagens.
 
-I06 – Onboarding personalizado
-Os concorrentes têm onboarding mais genérico.
-O Motion Club identifica interesses e sugere atividades desde o início.
+I06 – Sistema de criação e gestão de grupos
+Usuários podem criar grupos, definir informações (local, horário, modalidade) e gerenciar participantes.
 
+I07 – Notificações em tempo real
+O sistema envia notificações sobre eventos, convites, mensagens e atualizações.
+
+I08 – Filtros de busca avançados
+O usuário pode filtrar atividades por localização, tipo de esporte, horário e nível de dificuldade.
+
+I09 – Sistema de onboarding
+O sistema coleta preferências iniciais do usuário para personalizar a experiência desde o primeiro acesso.
