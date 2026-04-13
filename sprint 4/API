@@ -1,0 +1,38 @@
+Para apoios no Motion Club, eu seguiria por 2 caminhos:
+
+1. Apoiador recorrente / comunidade
+Use APOIA.se API se a ideia for ter área exclusiva para apoiadores, validar se o usuário está em dia e liberar benefícios no app. A API pública deles permite consultar se a pessoa é apoiadora, o valor do apoio e se o apoio do mês foi pago.  ￼
+
+2. Plataforma própria com repasse
+Use Stripe Connect se o Motion Club for operar como plataforma com cobrança, split entre organizador/professor/quadra e gestão de pagamentos. O Connect foi feito para software platform e marketplace, com onboarding de contas e orquestração de repasses entre múltiplas partes.  ￼
+
+Para o Motion Club, o mais forte é isso aqui:
+	•	Se quer só “apoiar projeto/comunidade”: APOIA.se
+	•	Se quer monetizar aulas, eventos, match de jogadores e repassar dinheiro: Stripe Connect
+	•	Se quer os dois: Stripe para operação principal + módulo de apoiadores separado
+
+Estrutura que eu montaria:
+	•	users
+	•	supporters
+	•	plans
+	•	payments
+	•	benefits
+	•	events
+	•	organizers
+	•	payouts
+
+Endpoints:
+	•	POST /apoios
+	•	GET /apoios/me
+	•	GET /beneficios
+	•	POST /checkout
+	•	POST /webhooks/pagamento
+	•	GET /organizador/recebimentos
+
+MVP de apoios no Motion Club:
+	•	plano mensal de apoio
+	•	selo de apoiador no perfil
+	•	acesso antecipado a eventos
+	•	desconto em inscrições
+	•	ranking/comunidade fechada
+	•	painel para ver quem apoiou e receita do mês
