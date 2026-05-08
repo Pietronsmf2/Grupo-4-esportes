@@ -1,0 +1,35 @@
+1. Funcionalidades do MVP
+O MVP (Minimum Viable Product) do Motion Club reúne as funcionalidades essenciais para entregar valor imediato ao usuário 
+com o menor esforço de desenvolvimento. O objetivo é validar a proposta central da plataforma — conectar pessoas pelo esporte — antes de expandir para 
+recursos mais complexos.
+
+2. Critérios de Priorização
+As funcionalidades foram priorizadas com base em três fatores: impacto direto na proposta de valor central (conexão entre pessoas), 
+necessidade para o funcionamento básico do fluxo do usuário, e viabilidade técnica dentro do prazo do projeto.
+
+3. Tabela de Funcionalidades
+| # | Funcionalidade | Prioridade | Categoria |
+| 01 | Cadastro de usuário (nome, email, senha, foto) | Alta | Autenticação |
+| 02 | Login e autenticação segura | Alta | Autenticação |
+| 03 | Edição de perfil e preferências esportivas | Alta | Perfil |
+| 04 | Busca de grupos por modalidade esportiva | Alta | Descoberta |
+| 05 | Busca de grupos por localização (até X km) | Alta | Descoberta |
+| 06 | Entrar em um grupo esportivo existente | Alta | Grupos |
+| 07 | Criar um grupo esportivo | Alta | Grupos |
+| 08 | Visualizar detalhes do grupo (local, horário) | Alta | Grupos |
+| 09 | Chat interno do grupo | Alta | Comunicação |
+| 10 | Criar evento esportivo dentro de um grupo | Alta | Eventos |
+| 11 | Confirmar presença em evento | Alta | Eventos |
+| 12 | Feed de atividades da comunidade | Média | Social |
+| 13 | Notificações de novos eventos e mensagens | Média | Engajamento |
+| 14 | Avaliação de participantes após evento | Média | Confiança |
+| 15 | Filtro avançado por dia/horário/nível | Média | Descoberta |
+| 16 | Mapa interativo de grupos próximos | Baixa | Descoberta |
+| 17 | Sistema de conquistas e badges | Baixa | Gamificação |
+| 18 | Histórico de atividades do usuário | Baixa | Perfil |
+
+
+4. O que fica fora do MVP
+As seguintes funcionalidades foram identificadas mas excluídas do escopo inicial por serem melhorias progressivas: 
+mapa interativo de grupos próximos, sistema de gamificação e badges, histórico detalhado de atividades, 
+integração com apps de saúde (Apple Health, Google Fit) e planos de assinatura e monetização.
