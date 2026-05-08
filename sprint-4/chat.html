@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+      <div class="input-area">
+        <input type="text" id="messageInput" placeholder="Digite sua mensagem...">
+        <button class="send-btn" onclick="sendMessage()">Enviar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const chats = {
+      "Futebol Society": [
+        { user: "Lucas", text: "Alguém anima um futebol hoje às 19h? ⚽", time: "18:02" },
+        { user: "Marina", text: "Eu vou! Chama mais gente.", time: "18:05" }
+      ],
+
+      "Corrida Parque": [
+        { user: "Ana", text: "Treino amanhã às 6h 👟", time: "20:10" },
+        { user: "Carlos", text: "Vou participar!", time: "20:12" }
+      ],
+
+      "Beach Tennis": [
+        { user: "Fernanda", text: "Quem fecha dupla sábado? 🎾", time: "17:40" },
+        { user: "Rafael", text: "Estou dentro!", time: "17:44" }
+      ]
+    };
+
+    let currentGroup = "Futebol Society";
+
+    function renderMessages() {
+      const messagesContainer = document.getElementById("messages");
+      messagesContainer.innerHTML = "";
+
+      chats[currentGroup].forEach(msg => {
+        messagesContainer.innerHTML += `
+          <div class="message">
+            <div class="message-header">
+              <span class="message-user">${msg.user}</span>
+              <span class="message-time">${msg.time}</span>
+            </div>
+            <p>${msg.text}</p>
+          </div>
+        `;
+      });
+
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function changeGroup(groupName) {
+      currentGroup = groupName;
+
+      document.getElementById("groupTitle").innerText = groupName;
+
+      document.querySelectorAll(".group").forEach(group => {
+        group.classList.remove("active");
+      });
+
+      event.currentTarget.classList.add("active");
+
+      renderMessages();
+    }
+
+    function sendMessage() {
+      const input = document.getElementById("messageInput");
+
+      if(input.value.trim() === "") return;
+
+      const now = new Date();
+      const time = now.getHours().toString().padStart(2, '0') + ':' +
+                   now.getMinutes().toString().padStart(2, '0');
+
+      chats[currentGroup].push({
+        user: "Você",
+        text: input.value,
+        time: time
+      });
+
+      input.value = "";
+
+      renderMessages();
+    }
+
+    document.getElementById("messageInput")
+      .addEventListener("keypress", function(e) {
+        if(e.key === "Enter") {
+          sendMessage();
+        }
+      });
+
+    renderMessages();
+  </script>
+
+</body>
+</html>
