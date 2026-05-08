@@ -1,0 +1,52 @@
+1. Casos de Uso
+Os casos de uso descrevem as interações entre os usuários (atores) e o sistema. Eles guiam o desenvolvimento das funcionalidades
+e servem como base para os testes de aceitação.
+
+2. Atores do Sistema
+Usuário não autenticado: pessoa que acessa o site sem estar logada. Pode se cadastrar ou fazer login.
+Usuário autenticado: pessoa com conta ativa que pode interagir com grupos, eventos e chat.
+Administrador de grupo: usuário autenticado que criou um grupo e pode gerenciá-lo.
+Membro de grupo: usuário autenticado que entrou em um grupo e participa das atividades.
+Sistema: a própria plataforma, responsável por ações automáticas como notificações.
+
+3. Tabela de Casos de Uso
+| ID | Nome | Descrição | Ator |
+| UC01 | Cadastrar-se na plataforma | Usuário cria uma conta informando nome, email, senha e modalidades de interesse. | Usuário não autenticado |
+| UC02 | Fazer login | Usuário acessa a plataforma com email e senha cadastrados. | Usuário não autenticado |
+| UC03 | Editar perfil | Usuário atualiza foto, nome, localização e esportes preferidos. | Usuário autenticado |
+| UC04 | Buscar grupos | Usuário pesquisa grupos por modalidade esportiva e/ou distância geográfica. | Usuário autenticado |
+| UC05 | Entrar em um grupo | Usuário solicita entrada e passa a ser membro de um grupo esportivo. | Usuário autenticado |
+| UC06 | Criar grupo | Usuário cria um novo grupo definindo modalidade, local, horário e regras. | Usuário autenticado |
+| UC07 | Gerenciar grupo | Administrador aprova/recusa membros, edita informações e pode encerrar o grupo. | Administrador de grupo |
+| UC08 | Criar evento | Membro cria um evento dentro do grupo com data, local e número máximo de vagas. | Membro de grupo |
+| UC09 | Confirmar presença | Usuário confirma ou cancela presença em um evento do grupo. | Membro de grupo |
+| UC10 | Enviar mensagem no chat | Usuário envia mensagem de texto no chat interno do grupo. | Membro de grupo |
+| UC11 | Receber notificação | Sistema notifica o usuário sobre novos eventos, mensagens ou solicitações. | Sistema |
+| UC12 | Avaliar participante | Após evento, usuário avalia outros participantes com nota e comentário. | Membro de grupo |
+| UC13 | Sair de um grupo | Usuário remove a si mesmo da lista de membros de um grupo. | Membro de grupo |
+| UC14 | Denunciar conteúdo/usuário | Usuário reporta comportamento inadequado ao administrador ou moderador. | Usuário autenticado |
+
+4. Detalhamento dos Casos de Uso Prioritários
+a.) UC04 — Buscar Grupos
+Ator principal: Usuário autenticado  
+Pré-condição: Usuário está logado na plataforma  
+Trigger: Usuário acessa a seção "Explorar" ou usa a barra de busca  
+Fluxo principal: 1. Usuário acessa a tela de busca. 2. Informa modalidade esportiva e/ou localização. 3. Sistema retorna lista de grupos filtrados. 4. Usuário seleciona um grupo para ver detalhes. 5. Usuário clica em "Entrar no grupo".  
+Pós-condição: Usuário vê os grupos disponíveis e pode solicitar entrada  
+Exceção: Nenhum grupo encontrado → Sistema exibe mensagem de incentivo para criar um novo grupo
+
+b.) UC06 — Criar Grupo
+Ator principal: Usuário autenticado  
+Pré-condição: Usuário está logado e não atingiu o limite de grupos criados  
+Trigger: Usuário clica em "Criar grupo"  
+Fluxo principal: 1. Usuário acessa o formulário de criação. 2. Informa nome, modalidade, localização, horários e descrição. 3. Confirma a criação. 4. Sistema cria o grupo e torna o usuário administrador. 5. Grupo aparece nos resultados de busca.  
+Pós-condição: Grupo criado e visível para outros usuários buscarem  
+Exceção: Dados incompletos → Sistema destaca campos obrigatórios não preenchidos
+
+c.) UC08 — Criar Evento
+Ator principal: Membro de grupo  
+Pré-condição: Usuário é membro ativo do grupo  
+Trigger: Usuário clica em "Novo evento" dentro do grupo  
+Fluxo principal: 1. Usuário preenche título, descrição, data, horário, local e vagas. 2. Sistema publica o evento no feed do grupo. 3. Membros recebem notificação. 4. Membros confirmam ou recusam presença.  
+Pós-condição: Evento visível para todos os membros do grupo  
+Exceção: Limite de vagas atingido → Sistema bloqueia novas confirmações e notifica o criador
