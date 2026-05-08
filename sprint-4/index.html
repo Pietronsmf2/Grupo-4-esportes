@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motion Club Chat</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 1400px;
+      height: 90vh;
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 30px;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(182,255,0,0.1);
+    }
+
+    .sidebar {
+      width: 30%;
+      background: #050505;
+      border-right: 1px solid #1f1f1f;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo {
+      margin-bottom: 40px;
+    }
+
+    .logo h1 {
+      font-size: 42px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      color: #B6FF00;
+    }
+
+    .logo p {
+      color: #666;
+      margin-top: 10px;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .group {
+      background: #101010;
+      border: 1px solid #222;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .group:hover {
+      border-color: #B6FF00;
+    }
+
+    .group.active {
+      border-color: #B6FF00;
+      background: #151515;
+    }
+
+    .group h2 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .group p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .chat {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header {
+      padding: 30px;
+      border-bottom: 1px solid #1f1f1f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-header h2 {
+      font-size: 32px;
+      text-transform: uppercase;
+    }
+
+    .chat-header p {
+      color: #666;
+      margin-top: 5px;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .join-btn {
+      background: #B6FF00;
+      color: black;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .join-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .messages {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .message {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 25px;
+      padding: 18px;
+      margin-bottom: 20px;
+      max-width: 70%;
+    }
+
+    .message-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .message-user {
+      color: #B6FF00;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .message-time {
+      color: #666;
+      font-size: 12px;
+    }
+
+    .input-area {
+      border-top: 1px solid #1f1f1f;
+      padding: 25px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .input-area input {
+      flex: 1;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 999px;
+      padding: 18px 25px;
+      color: white;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .input-area input:focus {
+      border-color: #B6FF00;
+    }
+
+    .send-btn {
+      background: #B6FF00;
+      color: black;
+      border: none;
+      padding: 18px 35px;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .send-btn:hover {
+      transform: scale(1.05);
+    }
+
+    @media(max-width: 900px) {
+      .container {
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        border-radius: 0;
+      }
+
+      .sidebar,
+      .chat {
+        width: 100%;
+      }
+
+      .sidebar {
+        height: 35%;
+      }
+
+      .chat {
+        height: 65%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="sidebar">
+
+      <div class="logo">
+        <h1>Motion <span>Club</span></h1>
+        <p>Movimento que conecta</p>
+      </div>
+
+      <div class="group active" onclick="changeGroup('Futebol Society', this)">
+        <h2>Futebol Society</h2>
+        <p>Grupo ativo</p>
+      </div>
+
+      <div class="group" onclick="changeGroup('Corrida Parque', this)">
+        <h2>Corrida Parque</h2>
+        <p>Treino coletivo</p>
+      </div>
+
+      <div class="group" onclick="changeGroup('Beach Tennis', this)">
+        <h2>Beach Tennis</h2>
+        <p>Partidas abertas</p>
+      </div>
+
+    </div>
+
+    <div class="chat">
+
+      <div class="chat-header">
+        <div>
+          <h2 id="groupTitle">Futebol Society</h2>
+          <p>Grupo ativo agora</p>
+        </div>
+
+        <button class="join-btn">Participar</button>
+      </div>
+
+      <div class="messages" id="messages"></div>
+
+      <div class="input-area">
+        <input type="text" id="messageInput" placeholder="Digite sua mensagem...">
+        <button class="send-btn" onclick="sendMessage()">Enviar</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    const chats = {
+
+      "Futebol Society": [
+        {
+          user: "Lucas",
+          text: "Alguém anima um futebol hoje às 19h? ⚽",
+          time: "18:02"
+        },
+
+        {
+          user: "Marina",
+          text: "Eu vou! Chama mais gente.",
+          time: "18:05"
+        }
+      ],
+
+      "Corrida Parque": [
+        {
+          user: "Ana",
+          text: "Treino amanhã às 6h 👟",
+          time: "20:10"
+        },
+
+        {
+          user: "Carlos",
+          text: "Vou participar!",
+          time: "20:12"
+        }
+      ],
+
+      "Beach Tennis": [
+        {
+          user: "Fernanda",
+          text: "Quem fecha dupla sábado? 🎾",
+          time: "17:40"
+        },
+
+        {
+          user: "Rafael",
+          text: "Estou dentro!",
+          time: "17:44"
+        }
+      ]
+
+    };
+
+    let currentGroup = "Futebol Society";
+
+    function renderMessages() {
+
+      const messagesContainer = document.getElementById("messages");
+
+      messagesContainer.innerHTML = "";
+
+      chats[currentGroup].forEach(msg => {
+
+        messagesContainer.innerHTML += `
+          <div class="message">
+
+            <div class="message-header">
+              <span class="message-user">${msg.user}</span>
+              <span class="message-time">${msg.time}</span>
+            </div>
+
+            <p>${msg.text}</p>
+
+          </div>
+        `;
+      });
+
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function changeGroup(groupName, element) {
+
+      currentGroup = groupName;
+
+      document.getElementById("groupTitle").innerText = groupName;
+
+      document.querySelectorAll(".group").forEach(group => {
+        group.classList.remove("active");
+      });
+
+      element.classList.add("active");
+
+      renderMessages();
+    }
+
+    function sendMessage() {
+
+      const input = document.getElementById("messageInput");
+
+      if(input.value.trim() === "") return;
+
+      const now = new Date();
+
+      const time =
+        now.getHours().toString().padStart(2, '0')
+        + ':'
+        + now.getMinutes().toString().padStart(2, '0');
+
+      chats[currentGroup].push({
+
+        user: "Você",
+        text: input.value,
+        time: time
+
+      });
+
+      input.value = "";
+
+      renderMessages();
+    }
+
+    document
+      .getElementById("messageInput")
+      .addEventListener("keypress", function(e) {
+
+        if(e.key === "Enter") {
+          sendMessage();
+        }
+
+      });
+
+    renderMessages();
+
+  </script>
+
+</body>
+</html>
