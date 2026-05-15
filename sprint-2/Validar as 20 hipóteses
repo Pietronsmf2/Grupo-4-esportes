@@ -1,0 +1,71 @@
+Validação das 20 Hipóteses
+
+Cada hipótese foi analisada com base nos dados do formulário, nas entrevistas realizadas e em referências de produtos similares. O status pode ser: Validada, Parcialmente validada ou Não validada.
+
+H01 — Se pessoas tiverem facilidade para encontrar parceiros de esporte próximos, então praticarão atividade física com mais frequência.**
+Validada. 64% já deixaram de praticar por não saber onde encontrar um grupo. Reduzir esse atrito deve aumentar a frequência diretamente.
+
+H02 — Se o app permitir criar grupos por modalidade, então haverá maior engajamento entre usuários com interesses em comum.**
+Validada. Nas entrevistas, usuários reclamaram de grupos genéricos no WhatsApp onde tudo se mistura. Segmentar por modalidade foi apontado como algo que aumentaria o engajamento.
+
+H03 — Se a plataforma mostrar atividades esportivas por localização, então a chance de participação em encontros será maior.**
+Validada. O mapa de grupos próximos recebeu 4 votos. Nas entrevistas, a proximidade foi citada como fator decisivo para participar.
+
+H04 — Se o Motion Club oferecer uma experiência simples e rápida para marcar partidas ou treinos, então mais usuários concluirão o agendamento.**
+Validada. O calendário de eventos foi a segunda funcionalidade mais votada (7 votos). A dificuldade de organização é um dos principais problemas com as ferramentas atuais.
+
+H05 — Se usuários puderem filtrar por nível de habilidade, então terão mais conforto para participar das atividades.**
+Parcialmente validada. Não foi testada diretamente, mas iniciantes relataram insegurança em entrar em grupos sem saber o nível dos outros participantes.
+
+H06 — Se houver avaliações e reputação entre participantes, então a confiança dentro da comunidade aumentará.**
+Validada. O sistema de reputação foi a terceira funcionalidade mais votada (6 votos) e o principal fator de segurança citado para entrar em grupos desconhecidos.
+
+H07 — Se o app enviar lembretes de eventos e partidas, então a taxa de comparecimento será maior.**
+Parcialmente validada. Não testada diretamente, mas usuários relataram esquecer eventos por causa do volume de mensagens no WhatsApp.
+
+H08 — Se houver integração com mapa e geolocalização, então o processo de encontrar locais esportivos será mais eficiente.**
+Validada. Mapa de grupos próximos recebeu 4 votos. A geolocalização foi percebida como facilitadora da descoberta de grupos.
+
+H09 — Se o Motion Club criar senso de comunidade, então os usuários permanecerão mais tempo na plataforma.**
+Parcialmente validada. 90% topam pagar por premium, o que indica disposição de engajamento longo. O senso de comunidade não foi testado diretamente.
+
+H10 — Se o app gamificar a experiência com metas, selos ou rankings, então o engajamento recorrente aumentará.**
+Parcialmente validada. Não foi testada nesta rodada. Plataformas como Strava mostram que gamificação ajuda na retenção, mas precisamos validar com nossos usuários.
+
+H11 — Se houver espaço para esportes coletivos e individuais, então a plataforma atingirá um público mais amplo.**
+Validada. Os respondentes citaram modalidades bem variadas — futebol, trilha, eventos, corrida. O público não se limita a esportes coletivos.
+
+H12 — Se novos usuários entrarem e encontrarem atividades disponíveis rapidamente, então a retenção inicial será maior.**
+Validada. A dificuldade de encontrar grupos é o principal problema relatado. Um onboarding que leve o usuário a um grupo ativo rapidamente deve impactar diretamente a retenção.
+
+H13 — Se o Motion Club permitir criação de eventos abertos e privados, então atenderá diferentes perfis de usuários.**
+Parcialmente validada. Nas entrevistas surgiram perfis distintos: quem quer grupos fechados de amigos e quem quer conhecer gente nova. As duas opções atendem esses perfis.
+
+H14 — Se a marca transmitir energia, comunidade e movimento, então será mais atrativa para o público jovem e ativo.**
+Parcialmente validada. Não foi testada diretamente, mas o perfil dos respondentes é consistente com um público sensível a marcas com esse posicionamento.
+
+H15 — Se a interface for visualmente limpa e intuitiva, então haverá menos abandono no uso inicial.**
+Validada. A complexidade e o ruído do WhatsApp foram citados como barreiras. Uma interface limpa e focada resolve isso diretamente.
+
+H16 — Se usuários puderem convidar amigos facilmente, então o crescimento orgânico da plataforma será acelerado.**
+Parcialmente validada. O WhatsApp ainda é preferido justamente pela facilidade de chamar conhecidos. Replicar isso no Motion Club pode gerar crescimento orgânico.
+
+H17 — Se a plataforma resolver a dificuldade de "com quem praticar", então ela gerará valor real para quem quer manter constância no esporte.**
+Validada. É a hipótese central do produto e a mais confirmada pelos dados. 64% já desistiram de uma atividade por falta de companhia.
+
+H18 — Se academias, quadras ou organizadores puderem divulgar eventos no app, então o Motion Club poderá criar novas fontes de receita.**
+Parcialmente validada. Não testada com parceiros B2B, mas a abertura ao modelo premium indica que os usuários valorizariam eventos com curadoria profissional.
+
+H19 — Se houver recomendação personalizada de atividades com base no perfil do usuário, então a experiência será percebida como mais relevante.**
+Parcialmente validada. A frustração com ferramentas genéricas indica que os usuários valorizam relevância. Não foi testada diretamente.
+
+H20 — Se o Motion Club unir prática esportiva e socialização, então será visto não apenas como app esportivo, mas como plataforma de conexão entre pessoas.**
+Validada. Os dados mostram que a motivação vai além do esporte — as pessoas buscam companhia e rotina compartilhada. O posicionamento como plataforma de conexão faz sentido.
+
+Resumo:
+
+- Validadas: H01, H02, H03, H04, H06, H08, H11, H12, H15, H17, H20 (11 hipóteses)
+- Parcialmente validadas: H05, H07, H09, H10, H13, H14, H16, H18, H19 (9 hipóteses)
+- Não validadas: nenhuma
+
+Nenhuma hipótese foi refutada. As parcialmente validadas devem ser priorizadas na próxima rodada de pesquisa.
