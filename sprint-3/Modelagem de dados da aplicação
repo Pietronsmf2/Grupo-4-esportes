@@ -1,0 +1,50 @@
+Modelagem de Dados — Motion Club
+
+Entidades principais
+
+**Usuário**
+id, nome, email, senha_hash, foto_url, localização, latitude, longitude, bio, verificado, nota_media, criado_em
+
+**Modalidade**
+id, nome, ícone, categoria (coletivo / individual / aquático)
+
+**Grupo**
+id, nome, descrição, modalidade_id, admin_id, localização, latitude, longitude, privacidade (aberto/fechado), max_membros, nível, ativo, criado_em
+
+**Membro do Grupo**
+id, grupo_id, usuario_id, papel (admin/membro), status (pendente/aprovado/bloqueado), entrou_em
+
+**Evento**
+id, grupo_id, criador_id, título, descrição, data_hora, local_nome, local_endereço, latitude, longitude, max_participantes, status (aberto/lotado/cancelado/encerrado), criado_em
+
+**Presença em Evento**
+id, evento_id, usuario_id, status (confirmado/cancelado/lista_espera), confirmado_em
+
+**Mensagem**
+id, grupo_id, autor_id, tópico, conteúdo, enviado_em
+
+**Avaliação**
+id, evento_id, avaliador_id, avaliado_id, nota (1-5), comentário, criado_em
+
+**Preferências do Usuário**
+id, usuario_id, modalidade_id, nível (iniciante/intermediário/avançado)
+
+**Notificação**
+id, usuario_id, tipo, título, conteúdo, lida, criado_em
+
+
+
+Relacionamentos:
+- Usuário ↔ Grupo: N para N (via Membro do Grupo)
+- Grupo → Evento: 1 para N
+- Evento ↔ Usuário: N para N (via Presença em Evento)
+- Evento → Avaliação: 1 para N
+- Grupo → Mensagem: 1 para N
+- Usuário ↔ Modalidade: N para N (via Preferências)
+
+Regras de negócio:
+- Um usuário só pode avaliar outro se ambos confirmaram presença no mesmo evento
+- Quando o evento atinge o max_participantes, o status muda automaticamente para "lotado"
+- A nota média do usuário é recalculada a cada nova avaliação recebida
+- A senha nunca é salva em texto puro — usar bcrypt ou similar
+- Todos os IDs são UUID para evitar enumeração
