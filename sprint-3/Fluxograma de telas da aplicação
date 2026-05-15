@@ -1,0 +1,63 @@
+Fluxograma de Telas — Motion Club
+
+Fluxo principal
+O usuário chega na landing page e pode se cadastrar ou fazer login. Após autenticado, cai no feed principal com grupos e eventos em destaque.
+Landing Page
+├── Cadastro → Onboarding (modalidades + localização) → Feed
+└── Login → Feed
+
+Encontrar e entrar em um grupo
+Feed → Explorar → Filtros (modalidade / localização / nível)
+→ Lista de grupos → Página do grupo
+├── Grupo aberto → Entrar direto → Vira membro
+└── Grupo fechado → Solicitar entrada → Aguardar aprovação → Vira membro
+
+Criar um grupo
+Feed → Criar grupo → Formulário (nome, modalidade, local, horários, privacidade)
+→ Grupo criado → Usuário vira administrador
+
+Participar de um evento
+Página do grupo → Aba Eventos → Página do evento
+→ Confirmar presença → Recebe lembrete automático
+→ Cancelar presença → Vaga liberada
+
+Chat do grupo
+Página do grupo → Aba Chat → Tópicos (Geral / Próximo evento / Logística / ...)
+
+Perfil
+Menu → Minha conta
+├── Editar perfil
+├── Meus grupos
+├── Histórico de eventos
+├── Avaliações recebidas
+└── Configurações
+
+Hierarquia completa de telas
+Motion Club
+├── Área pública
+│   ├── Landing page
+│   ├── Cadastro
+│   └── Login
+│
+└── Área logada
+├── Feed
+├── Explorar
+│   └── Página do grupo
+│       ├── Sobre
+│       ├── Eventos → Página do evento
+│       ├── Membros
+│       └── Chat
+├── Criar grupo
+├── Notificações
+└── Perfil
+├── Editar
+├── Meus grupos
+├── Histórico
+└── Configurações
+
+
+Estados importantes
+- Busca sem resultado → exibe botão para criar um grupo
+- Evento lotado → bloqueia confirmação e oferece lista de espera
+- Primeiro acesso → onboarding de 3 passos antes do feed
+- Grupo privado → botão "Solicitar entrada" no lugar de "Entrar"
