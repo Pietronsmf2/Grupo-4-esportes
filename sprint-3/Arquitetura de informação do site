@@ -1,0 +1,53 @@
+Arquitetura de Informação — Motion Club
+
+Estrutura de páginas
+
+**Área pública (sem login)**
+- / → Landing page
+- /cadastro → Cadastro
+- /login → Login
+- /recuperar-senha → Recuperação de senha
+
+**Área privada (com login)**
+- /home → Feed principal
+- /explorar → Busca de grupos
+- /explorar/:id → Página do grupo
+- /criar-grupo → Formulário de criação
+- /notificacoes → Notificações
+- /perfil → Perfil do usuário
+- /perfil/editar → Edição de perfil
+- /perfil/grupos → Grupos que participa
+- /perfil/historico → Histórico de eventos
+- /perfil/configuracoes → Preferências
+
+Navegação principal: 
+A barra de navegação tem 4 itens fixos: **Início**, **Explorar**, **Criar** e **Perfil**. O ícone de notificações fica no canto superior direito em todas as telas logadas.
+
+Página do grupo: A página do grupo é organizada em abas para não sobrecarregar o usuário com informação de uma vez só.
+
+- **Sobre** → descrição, nível, regras, localização e horários
+- **Eventos** → próximos encontros e histórico
+- **Membros** → lista com avaliações
+- **Chat** → mensagens organizadas por tópico
+
+Onboarding: 
+O onboarding acontece logo após o cadastro e tem 3 passos:
+1. Quais esportes você quer praticar?
+2. Qual seu nível?
+3. Onde você está?
+Ao final, o usuário já cai em um feed com sugestões personalizadas.
+
+Nomenclatura adotada:
+Para manter consistência na interface, definimos os termos padrão:
+- Comunidade esportiva → **Grupo**
+- Encontro esportivo → **Evento**
+- Tipo de esporte → **Modalidade**
+- Entrar na comunidade → **Entrar no grupo**
+- Avaliação → **Avaliação** (não "review" ou "rating")
+
+Estados mapeados:
+- Busca sem resultado → mensagem + botão "Criar grupo"
+- Feed vazio → sugestões por localização + prompt para completar perfil
+- Evento lotado → vagas esgotadas + lista de espera
+- Grupo privado → botão "Solicitar entrada"
+- Solicitação pendente → botão desativado com "Aguardando aprovação"
