@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrar — Motion Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body class="auth-body">
+ 
+  <div class="auth-container">
+    <a href="index.html" class="logo logo-center">
+      <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
+        <path d="M4 24 L10 8 L16 18 L22 8 L28 24" stroke="#b5f23d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="28" cy="24" r="3" fill="#b5f23d"/>
+      </svg>
+      <span class="logo-text">Motion<span class="logo-accent">Club</span></span>
+    </a>
+ 
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1 class="auth-title">Bem-vindo de volta</h1>
+        <p class="auth-subtitle">Entre para continuar jogando</p>
+      </div>
+ 
+      <form class="auth-form" action="/login" method="POST">
+        <div class="form-group">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="seu@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="password" class="form-label">
+            Senha
+            <a href="#" class="form-label-link">Esqueci minha senha</a>
+          </label>
+          <input type="password" id="password" name="password" class="form-input" placeholder="••••••••" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Entrar</button>
+      </form>
+ 
+      <p class="auth-footer-text">
+        Não tem conta?
+        <a href="register.html" class="link-green">Cadastre-se grátis</a>
+      </p>
+    </div>
+  </div>
+ 
+  <div class="auth-bg-glow"></div>
+</body>
+</html>
+ 
