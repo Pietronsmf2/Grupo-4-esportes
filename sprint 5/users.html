@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usuários — Motion Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+ 
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M4 24 L10 8 L16 18 L22 8 L28 24" stroke="#b5f23d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="28" cy="24" r="3" fill="#b5f23d"/>
+        </svg>
+        <span class="logo-text">Motion<span class="logo-accent">Club</span></span>
+      </a>
+      <div class="nav-actions">
+        <a href="register.html" class="btn btn-primary">+ Novo usuário</a>
+      </div>
+    </div>
+  </nav>
+ 
+  <main class="page-main">
+    <div class="container page-container">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Usuários</h1>
+          <p class="page-subtitle">6 usuários cadastrados</p>
+        </div>
+        <div class="search-bar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" placeholder="Buscar usuário..." class="search-input" />
+        </div>
+      </div>
+ 
+      <div class="table-card">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Usuário</th>
+              <th>E-mail</th>
+              <th>Esportes</th>
+              <th>Partidas</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="table-user">
+                  <div class="av-sm" style="background:#b5f23d;color:#0a0a0a;font-weight:700">P</div>
+                  <div>
+                    <span class="table-user-name">Pietro Silva</span>
+                    <span class="table-user-id">#001</span>
+                  </div>
+                </div>
+              </td>
+              <td class="text-muted">pietro@email.com</td>
+              <td><span class="tag">⚽</span><span class="tag">🏃</span></td>
+              <td class="text-green fw-600">24</td>
+              <td><span class="status-badge status-active">Ativo</span></td>
+              <td class="table-actions">
+                <a href="edit-user.html" class="btn-icon" title="Editar">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                </a>
+                <a href="delete-user.html" class="btn-icon btn-icon-danger" title="Remover">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="table-user">
+                  <div class="av-sm" style="background:#3b82f6;color:#fff">A</div>
+                  <div><span class="table-user-name">Ana Costa</span><span class="table-user-id">#002</span></div>
+                </div>
+              </td>
+              <td class="text-muted">ana@email.com</td>
+              <td><span class="tag">🎾</span><span class="tag">🏐</span></td>
+              <td class="text-green fw-600">18</td>
+              <td><span class="status-badge status-active">Ativo</span></td>
+              <td class="table-actions">
+                <a href="edit-user.html" class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                <a href="delete-user.html" class="btn-icon btn-icon-danger"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="table-user">
+                  <div class="av-sm" style="background:#8cbf2a;color:#0a0a0a">B</div>
+                  <div><span class="table-user-name">Bruno Mendes</span><span class="table-user-id">#003</span></div>
+                </div>
+              </td>
+              <td class="text-muted">bruno@email.com</td>
+              <td><span class="tag">🏀</span></td>
+              <td class="text-green fw-600">31</td>
+              <td><span class="status-badge status-active">Ativo</span></td>
+              <td class="table-actions">
+                <a href="edit-user.html" class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                <a href="delete-user.html" class="btn-icon btn-icon-danger"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="table-user">
+                  <div class="av-sm" style="background:#ff5c2b;color:#fff">C</div>
+                  <div><span class="table-user-name">Carla Souza</span><span class="table-user-id">#004</span></div>
+                </div>
+              </td>
+              <td class="text-muted">carla@email.com</td>
+              <td><span class="tag">🏃</span><span class="tag">🏊</span></td>
+              <td class="text-green fw-600">9</td>
+              <td><span class="status-badge status-inactive">Inativo</span></td>
+              <td class="table-actions">
+                <a href="edit-user.html" class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                <a href="delete-user.html" class="btn-icon btn-icon-danger"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="table-user">
+                  <div class="av-sm" style="background:#6366f1;color:#fff">D</div>
+                  <div><span class="table-user-name">Diego Rocha</span><span class="table-user-id">#005</span></div>
+                </div>
+              </td>
+              <td class="text-muted">diego@email.com</td>
+              <td><span class="tag">⚽</span><span class="tag">🏀</span></td>
+              <td class="text-green fw-600">42</td>
+              <td><span class="status-badge status-active">Ativo</span></td>
+              <td class="table-actions">
+                <a href="edit-user.html" class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                <a href="delete-user.html" class="btn-icon btn-icon-danger"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg></a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="table-user">
+                  <div class="av-sm" style="background:#ec4899;color:#fff">E</div>
+                  <div><span class="table-user-name">Elisa Nunes</span><span class="table-user-id">#006</span></div>
+                </div>
+              </td>
+              <td class="text-muted">elisa@email.com</td>
+              <td><span class="tag">🎾</span></td>
+              <td class="text-green fw-600">15</td>
+              <td><span class="status-badge status-active">Ativo</span></td>
+              <td class="table-actions">
+                <a href="edit-user.html" class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></a>
+                <a href="delete-user.html" class="btn-icon btn-icon-danger"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+ 
+</body>
+</html>
+ 
