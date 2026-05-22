@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remover usuário — Motion Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+ 
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M4 24 L10 8 L16 18 L22 8 L28 24" stroke="#b5f23d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="28" cy="24" r="3" fill="#b5f23d"/>
+        </svg>
+        <span class="logo-text">Motion<span class="logo-accent">Club</span></span>
+      </a>
+      <div class="nav-actions">
+        <a href="users.html" class="btn btn-ghost">← Voltar</a>
+      </div>
+    </div>
+  </nav>
+ 
+  <main class="page-main">
+    <div class="container page-container page-container-sm">
+      <div class="danger-card">
+        <div class="danger-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff5c2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <h1 class="danger-title">Remover usuário</h1>
+        <p class="danger-subtitle">Esta ação é permanente e não pode ser desfeita.</p>
+ 
+        <!-- User preview -->
+        <div class="user-preview">
+          <div class="user-avatar-lg" style="background:#b5f23d;color:#0a0a0a;font-weight:700">P</div>
+          <div>
+            <p class="user-preview-name">Pietro Silva</p>
+            <p class="user-preview-email">pietro@email.com</p>
+          </div>
+        </div>
+ 
+        <div class="danger-warning">
+          <p>Ao confirmar, os seguintes dados serão removidos permanentemente:</p>
+          <ul>
+            <li>Perfil e informações pessoais</li>
+            <li>Histórico de partidas e eventos</li>
+            <li>Grupos e conexões</li>
+            <li>Avaliações e badges</li>
+          </ul>
+        </div>
+ 
+        <form action="/users/1/delete" method="POST" class="danger-form">
+          <input type="hidden" name="_method" value="DELETE" />
+          <div class="form-group">
+            <label for="confirm_email" class="form-label">Digite o e-mail do usuário para confirmar</label>
+            <input type="email" id="confirm_email" name="confirm_email" class="form-input" placeholder="pietro@email.com" required />
+          </div>
+          <div class="danger-actions">
+            <a href="users.html" class="btn btn-ghost btn-full">Cancelar</a>
+            <button type="submit" class="btn btn-danger btn-full">Sim, remover usuário</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+ 
+</body>
+</html>
+ 
