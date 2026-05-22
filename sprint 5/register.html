@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar conta — Motion Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body class="auth-body">
+ 
+  <div class="auth-container">
+    <a href="index.html" class="logo logo-center">
+      <svg width="36" height="36" viewBox="0 0 32 32" fill="none">
+        <path d="M4 24 L10 8 L16 18 L22 8 L28 24" stroke="#b5f23d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="28" cy="24" r="3" fill="#b5f23d"/>
+      </svg>
+      <span class="logo-text">Motion<span class="logo-accent">Club</span></span>
+    </a>
+ 
+    <div class="auth-card">
+      <div class="auth-header">
+        <h1 class="auth-title">Crie sua conta</h1>
+        <p class="auth-subtitle">Grátis para sempre. Comece agora.</p>
+      </div>
+ 
+      <form class="auth-form" action="/register" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first_name" class="form-label">Nome</label>
+            <input type="text" id="first_name" name="first_name" class="form-input" placeholder="Pietro" required />
+          </div>
+          <div class="form-group">
+            <label for="last_name" class="form-label">Sobrenome</label>
+            <input type="text" id="last_name" name="last_name" class="form-input" placeholder="Silva" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">E-mail</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="seu@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="password" class="form-label">Senha</label>
+          <input type="password" id="password" name="password" class="form-input" placeholder="Mínimo 8 caracteres" required minlength="8" />
+        </div>
+        <div class="form-group">
+          <label for="password_confirm" class="form-label">Confirmar senha</label>
+          <input type="password" id="password_confirm" name="password_confirm" class="form-input" placeholder="Repita a senha" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Esportes favoritos</label>
+          <div class="sports-checkboxes">
+            <label class="sport-check"><input type="checkbox" name="sports" value="futebol" /><span>⚽ Futebol</span></label>
+            <label class="sport-check"><input type="checkbox" name="sports" value="basquete" /><span>🏀 Basquete</span></label>
+            <label class="sport-check"><input type="checkbox" name="sports" value="tenis" /><span>🎾 Tênis</span></label>
+            <label class="sport-check"><input type="checkbox" name="sports" value="volei" /><span>🏐 Vôlei</span></label>
+            <label class="sport-check"><input type="checkbox" name="sports" value="corrida" /><span>🏃 Corrida</span></label>
+            <label class="sport-check"><input type="checkbox" name="sports" value="natacao" /><span>🏊 Natação</span></label>
+          </div>
+        </div>
+        <div class="form-check-group">
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms">Aceito os <a href="#" class="link-green">termos de uso</a></label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Criar conta gratuita</button>
+      </form>
+ 
+      <p class="auth-footer-text">
+        Já tem conta?
+        <a href="login.html" class="link-green">Entrar</a>
+      </p>
+    </div>
+  </div>
+ 
+  <div class="auth-bg-glow"></div>
+</body>
+</html>
