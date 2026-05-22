@@ -1,0 +1,112 @@
+-- =============================================
+--  MOTION CLUB — Seed do Banco de Dados
+--  Sprint 5 · Popular tabelas
+-- =============================================
+ 
+-- -----------------------------------------------
+-- Sports (modalidades)
+-- -----------------------------------------------
+INSERT INTO sports (name, slug, emoji) VALUES
+  ('Futebol',   'futebol',   '⚽'),
+  ('Basquete',  'basquete',  '🏀'),
+  ('Tênis',     'tenis',     '🎾'),
+  ('Vôlei',     'volei',     '🏐'),
+  ('Corrida',   'corrida',   '🏃'),
+  ('Natação',   'natacao',   '🏊'),
+  ('Ciclismo',  'ciclismo',  '🚴'),
+  ('Padel',     'padel',     '🏓');
+ 
+-- -----------------------------------------------
+-- Users (senhas em hash bcrypt — aqui placeholder)
+-- -----------------------------------------------
+INSERT INTO users (first_name, last_name, email, password, bio, is_active, is_admin) VALUES
+  ('Pietro',  'Silva',   'pietro@email.com',  '$2b$12$HASH_PLACEHOLDER_1', 'Apaixonado por futebol e corrida.',         TRUE,  TRUE),
+  ('Ana',     'Costa',   'ana@email.com',     '$2b$12$HASH_PLACEHOLDER_2', 'Tenista nas horas vagas.',                  TRUE,  FALSE),
+  ('Bruno',   'Mendes',  'bruno@email.com',   '$2b$12$HASH_PLACEHOLDER_3', 'Basquete é vida.',                          TRUE,  FALSE),
+  ('Carla',   'Souza',   'carla@email.com',   '$2b$12$HASH_PLACEHOLDER_4', 'Corredora de maratona em formação.',        FALSE, FALSE),
+  ('Diego',   'Rocha',   'diego@email.com',   '$2b$12$HASH_PLACEHOLDER_5', 'Futebol e basquete todo fim de semana.',    TRUE,  FALSE),
+  ('Elisa',   'Nunes',   'elisa@email.com',   '$2b$12$HASH_PLACEHOLDER_6', 'Tênis e bem-estar.',                       TRUE,  FALSE);
+ 
+-- -----------------------------------------------
+-- User sports
+-- -----------------------------------------------
+INSERT INTO user_sports (user_id, sport_id, skill_level) VALUES
+  (1, 1, 'intermediario'),   -- Pietro · Futebol
+  (1, 5, 'iniciante'),       -- Pietro · Corrida
+  (2, 3, 'avancado'),        -- Ana · Tênis
+  (2, 4, 'intermediario'),   -- Ana · Vôlei
+  (3, 2, 'avancado'),        -- Bruno · Basquete
+  (4, 5, 'intermediario'),   -- Carla · Corrida
+  (4, 6, 'iniciante'),       -- Carla · Natação
+  (5, 1, 'avancado'),        -- Diego · Futebol
+  (5, 2, 'intermediario'),   -- Diego · Basquete
+  (6, 3, 'intermediario');   -- Elisa · Tênis
+ 
+-- -----------------------------------------------
+-- Events (partidas)
+-- -----------------------------------------------
+INSERT INTO events (title, description, sport_id, organizer_id, location, scheduled_at, max_players, status) VALUES
+  ('Pelada no Ibirapuera',         'Futebol society, campo sintético, vaga pro 5.', 1, 1, 'Parque Ibirapuera, São Paulo',        NOW() + INTERVAL '2 hours',   10, 'aberto'),
+  ('Basquete Dominical',           'Jogo amistoso às domingos no ginásio.',          2, 3, 'Ginásio Santo André',                NOW() + INTERVAL '2 days',    10, 'aberto'),
+  ('Corrida Matinal — 5km',        'Turma de corrida leve, ritmo iniciante.',         5, 4, 'Av. Paulista, São Paulo',            NOW() + INTERVAL '1 day',     20, 'aberto'),
+  ('Tênis — Duplas mistas',        'Duplas mistas, nível intermediário.',             3, 2, 'Clube Atlético, Moema',              NOW() + INTERVAL '3 days',     4, 'aberto'),
+  ('Vôlei de praia',               'Ranqueamento mensal de duplas.',                  4, 6, 'Praia de Guarujá',                   NOW() + INTERVAL '7 days',     8, 'aberto'),
+  ('Pelada fechada — Empresa X',   'Evento interno. Acesso restrito.',                1, 5, 'Arena Anhembi',                      NOW() + INTERVAL '5 days',    14, 'cheio');
+ 
+-- -----------------------------------------------
+-- Event participants (confirmações de presença)
+-- -----------------------------------------------
+INSERT INTO event_participants (event_id, user_id, status) VALUES
+  (1, 1, 'confirmado'),
+  (1, 5, 'confirmado'),
+  (1, 3, 'confirmado'),
+  (2, 3, 'confirmado'),
+  (2, 5, 'confirmado'),
+  (3, 4, 'confirmado'),
+  (3, 1, 'confirmado'),
+  (4, 2, 'confirmado'),
+  (4, 6, 'confirmado'),
+  (5, 2, 'confirmado'),
+  (5, 6, 'confirmado'),
+  (6, 5, 'confirmado'),
+  (6, 1, 'pendente');
+ 
+-- -----------------------------------------------
+-- Badges
+-- -----------------------------------------------
+INSERT INTO badges (name, description, icon, criteria) VALUES
+  ('Estreante',     'Participou da primeira partida',         '🏅', 'event_count >= 1'),
+  ('Veterano',      'Participou de 10 partidas',              '⭐', 'event_count >= 10'),
+  ('Lendário',      'Participou de 50 partidas',              '🏆', 'event_count >= 50'),
+  ('Organizador',   'Criou 5 eventos',                        '📋', 'created_events >= 5'),
+  ('Popular',       'Recebeu 10 avaliações 5 estrelas',       '💚', 'five_star_reviews >= 10'),
+  ('Pro',           'Plano de apoio ativo',                   '💎', 'active_support = true');
+ 
+-- -----------------------------------------------
+-- User badges
+-- -----------------------------------------------
+INSERT INTO user_badges (user_id, badge_id) VALUES
+  (1, 1), (1, 2), (1, 6),   -- Pietro: Estreante, Veterano, Pro
+  (2, 1), (2, 2),            -- Ana: Estreante, Veterano
+  (3, 1), (3, 2), (3, 3),    -- Bruno: Estreante, Veterano, Lendário
+  (4, 1),                    -- Carla: Estreante
+  (5, 1), (5, 2), (5, 3), (5, 4), (5, 5), -- Diego: todos
+  (6, 1), (6, 2);            -- Elisa: Estreante, Veterano
+ 
+-- -----------------------------------------------
+-- Reviews
+-- -----------------------------------------------
+INSERT INTO reviews (reviewer_id, reviewed_id, event_id, rating, comment) VALUES
+  (2, 1, 1, 5, 'Ótimo jogador, pontual e animado!'),
+  (3, 1, 1, 5, 'Faz a partida ficar mais divertida.'),
+  (5, 1, 6, 4, 'Bom jogador, recomendo.'),
+  (1, 5, 1, 5, 'Diego é excelente, organizado e justo.'),
+  (1, 3, 2, 4, 'Bruno joga muito bem, parceiro top.');
+ 
+-- -----------------------------------------------
+-- Plans
+-- -----------------------------------------------
+INSERT INTO plans (name, price, interval, description) VALUES
+  ('Torcedor',  9.90,  'monthly', 'Suporte básico ao Motion Club. Badge exclusiva + acesso antecipado.'),
+  ('Atleta',   24.90,  'monthly', 'Badge Pro, destaque no ranking, eventos exclusivos.'),
+  ('Campeão',  99.00,  'yearly',  'Tudo do Atleta por um ano com desconto. Suporte prioritário.');
