@@ -1,0 +1,39 @@
+# Organização das Categorias de Eventos – Motion Club (Sprint 5)
+
+A organização das categorias de eventos tem como objetivo facilitar a navegação dos usuários dentro da plataforma, permitindo encontrar atividades esportivas de forma rápida e intuitiva.
+
+## CE01 – Separação por modalidade esportiva
+Os eventos devem ser organizados por esporte, como futebol, corrida, vôlei, ciclismo e beach tennis.
+
+## CE02 – Separação por localização
+O sistema deve permitir organização dos eventos por região ou bairro.
+
+## CE03 – Separação por nível de experiência
+Os eventos poderão ser classificados como iniciante, intermediário ou avançado.
+
+## CE04 – Separação por horário
+Os usuários devem conseguir visualizar eventos por período do dia.
+
+## CE05 – Destaque para eventos em andamento
+O sistema poderá destacar eventos que estejam acontecendo no momento.
+
+## CE06 – Organização por popularidade
+Eventos com maior número de participantes poderão aparecer em destaque.
+
+## CE07 – Categorias de eventos gratuitos e pagos
+A plataforma deve diferenciar eventos gratuitos de eventos pagos.
+
+## CE08 – Identificação visual das categorias
+Cada categoria poderá possuir ícones, cores ou etiquetas específicas.
+
+## CE09 – Filtros de pesquisa
+Os usuários devem conseguir filtrar eventos por modalidade, local e horário.
+
+## CE10 – Atualização das categorias
+As categorias deverão ser organizadas de forma dinâmica conforme novos eventos forem criados.
+
+## CE11 – Visualização simplificada
+A organização dos eventos deve manter uma interface clara e acessível para o usuário.
+
+## CE12 – Facilidade de descoberta
+O sistema deve facilitar a descoberta de novos eventos esportivos próximos ao usuário.
