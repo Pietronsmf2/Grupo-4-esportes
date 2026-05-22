@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editar perfil — Motion Club</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+ 
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M4 24 L10 8 L16 18 L22 8 L28 24" stroke="#b5f23d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <circle cx="28" cy="24" r="3" fill="#b5f23d"/>
+        </svg>
+        <span class="logo-text">Motion<span class="logo-accent">Club</span></span>
+      </a>
+      <div class="nav-actions">
+        <a href="users.html" class="btn btn-ghost">← Voltar</a>
+      </div>
+    </div>
+  </nav>
+ 
+  <main class="page-main">
+    <div class="container page-container">
+      <div class="page-header">
+        <h1 class="page-title">Editar perfil</h1>
+        <p class="page-subtitle">Atualize suas informações</p>
+      </div>
+ 
+      <div class="form-card">
+        <form action="/users/1/edit" method="POST">
+          <div class="form-section">
+            <h3 class="form-section-title">Informações pessoais</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first_name" class="form-label">Nome</label>
+                <input type="text" id="first_name" name="first_name" class="form-input" value="Pietro" required />
+              </div>
+              <div class="form-group">
+                <label for="last_name" class="form-label">Sobrenome</label>
+                <input type="text" id="last_name" name="last_name" class="form-input" value="Silva" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" id="email" name="email" class="form-input" value="pietro@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="bio" class="form-label">Bio</label>
+              <textarea id="bio" name="bio" class="form-input form-textarea" placeholder="Conte um pouco sobre você...">Apaixonado por esportes e conexões reais.</textarea>
+            </div>
+          </div>
+ 
+          <div class="form-section">
+            <h3 class="form-section-title">Esportes</h3>
+            <div class="sports-checkboxes">
+              <label class="sport-check"><input type="checkbox" name="sports" value="futebol" checked /><span>⚽ Futebol</span></label>
+              <label class="sport-check"><input type="checkbox" name="sports" value="basquete" /><span>🏀 Basquete</span></label>
+              <label class="sport-check"><input type="checkbox" name="sports" value="tenis" /><span>🎾 Tênis</span></label>
+              <label class="sport-check"><input type="checkbox" name="sports" value="volei" /><span>🏐 Vôlei</span></label>
+              <label class="sport-check"><input type="checkbox" name="sports" value="corrida" checked /><span>🏃 Corrida</span></label>
+              <label class="sport-check"><input type="checkbox" name="sports" value="natacao" /><span>🏊 Natação</span></label>
+            </div>
+          </div>
+ 
+          <div class="form-section">
+            <h3 class="form-section-title">Alterar senha <span class="form-optional">(opcional)</span></h3>
+            <div class="form-group">
+              <label for="current_password" class="form-label">Senha atual</label>
+              <input type="password" id="current_password" name="current_password" class="form-input" placeholder="••••••••" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="new_password" class="form-label">Nova senha</label>
+                <input type="password" id="new_password" name="new_password" class="form-input" placeholder="••••••••" />
+              </div>
+              <div class="form-group">
+                <label for="confirm_password" class="form-label">Confirmar nova senha</label>
+                <input type="password" id="confirm_password" name="confirm_password" class="form-input" placeholder="••••••••" />
+              </div>
+            </div>
+          </div>
+ 
+          <div class="form-actions">
+            <a href="users.html" class="btn btn-ghost">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Salvar alterações</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+ 
+</body>
+</html>
+ 
