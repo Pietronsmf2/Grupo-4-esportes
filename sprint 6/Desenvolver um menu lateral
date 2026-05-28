@@ -1,0 +1,53 @@
+# Desenvolvimento do Menu Lateral – sprint 6
+
+O menu lateral do Motion Club foi desenvolvido para facilitar a navegação dos usuários dentro da plataforma, 
+mantendo uma interface moderna, organizada e alinhada com a identidade visual do projeto.
+
+## Objetivo
+Criar um sistema de navegação simples e intuitivo para acesso rápido às principais áreas da plataforma.
+
+## Funcionalidades do menu
+
+### Home
+Acesso à página inicial da plataforma.
+
+### Eventos
+Área para visualizar eventos esportivos disponíveis.
+
+### Grupos
+Seção dedicada aos grupos esportivos da comunidade.
+
+### Chat
+Acesso ao sistema de mensagens entre usuários.
+
+### Perfil
+Área de informações e configurações do usuário.
+
+### Notificações
+Visualização de convites, avisos e atualizações da plataforma.
+
+### Configurações
+Opções de personalização e ajustes do sistema.
+
+## Características visuais
+
+- Fundo preto seguindo a identidade visual do Motion Club
+- Destaques em verde neon (#B6FF00)
+- Ícones minimalistas
+- Efeito hover nos botões
+- Layout organizado e moderno
+- Compatibilidade com desktop e mobile
+
+## Experiência do usuário
+
+O menu lateral foi planejado para:
+
+- Melhorar a navegação
+- Reduzir a quantidade de cliques
+- Facilitar acesso rápido às funcionalidades
+- Tornar o sistema mais intuitivo
+- Melhorar organização visual da plataforma
+
+## Resultado esperado
+
+O sistema de navegação deve transmitir modernidade, praticidade e manter consistência visual com o restante do Motion Club.
