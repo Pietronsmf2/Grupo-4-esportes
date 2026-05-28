@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Motion Club Loading</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:#000;
+    font-family:'Orbitron', sans-serif;
+    position:relative;
+    color:white;
+}
+
+/* BACKGROUND */
+
+.background{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(to right,
+    rgba(0,0,0,0.96),
+    rgba(0,0,0,0.82),
+    rgba(0,0,0,0.92)),
+
+    url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop");
+
+    background-size:cover;
+    background-position:center right;
+    filter:brightness(0.45);
+}
+
+/* DARK OVERLAY */
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at center,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.85));
+}
+
+/* SIDE GLOW */
+
+.left-glow{
+    position:absolute;
+    left:-120px;
+    bottom:-120px;
+
+    width:380px;
+    height:380px;
+
+    background:#B6FF00;
+
+    filter:blur(120px);
+    opacity:0.22;
+}
+
+/* MAIN */
+
+.container{
+    position:relative;
+    z-index:10;
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+}
+
+/* LOGO */
+
+.logo-icon{
+    width:140px;
+    margin-bottom:15px;
+}
+
+/* TITLE */
+
+.title{
+    text-align:center;
+    line-height:0.9;
+}
+
+.title h1{
+    font-size:90px;
+    font-weight:800;
+    color:white;
+    letter-spacing:4px;
+    font-style:italic;
+}
+
+.title h2{
+    margin-top:10px;
+
+    font-size:48px;
+    font-weight:700;
+
+    color:#B6FF00;
+
+    letter-spacing:16px;
+    font-style:italic;
+}
+
+/* LOADING */
+
+.loader{
+    margin-top:55px;
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    border:7px solid rgba(182,255,0,0.15);
+    border-top:7px solid #B6FF00;
+
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* TEXT */
+
+.loading-text{
+    margin-top:35px;
+
+    font-size:22px;
+    color:white;
+
+    letter-spacing:1px;
+}
+
+.loading-text span{
+    color:#B6FF00;
+}
+
+/* ICONS */
+
+.icons{
+    display:flex;
+    align-items:center;
+    gap:45px;
+
+    margin-top:65px;
+}
+
+.icon{
+    display:flex;
+    align-items:center;
+    gap:45px;
+}
+
+.icon svg{
+    width:32px;
+    height:32px;
+    fill:#B6FF00;
+}
+
+.separator{
+    width:1px;
+    height:35px;
+    background:#4d6600;
+}
+
+/* FOOTER */
+
+.footer{
+    margin-top:55px;
+
+    font-size:20px;
+    letter-spacing:8px;
+
+    text-transform:uppercase;
+
+    color:white;
+}
+
+.footer span{
+    color:#B6FF00;
+}
+
+/* LEFT SHAPES */
+
+.left-shape{
+    position:absolute;
+    left:-80px;
+    top:90px;
+
+    width:420px;
+    opacity:0.18;
+}
+
+.right-shape{
+    position:absolute;
+    right:-120px;
+    top:300px;
+
+    width:420px;
+    opacity:0.18;
+}
+
+/* LINES */
+
+.lines{
+    position:absolute;
+    bottom:40px;
+    left:30px;
+
+    display:flex;
+    gap:18px;
+    transform:rotate(45deg);
+}
+
+.lines div{
+    width:3px;
+    height:120px;
+    background:#B6FF00;
+}
+
+/* ATHLETE */
+
+.athlete{
+    position:absolute;
+    right:0;
+    top:0;
+
+    width:42%;
+    height:100%;
+
+    background:
+    linear-gradient(to left,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.85)),
+
+    url("https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1200&auto=format&fit=crop");
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:0.32;
+
+    mix-blend-mode:screen;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="overlay"></div>
+
+<div class="left-glow"></div>
+
+<div class="athlete"></div>
+
+<!-- SHAPES -->
+
+<svg class="left-shape" viewBox="0 0 400 400">
+<path d="M40 80 L120 80 L160 160 L70 250 L180 250 L330 80 L220 80 L120 170 L40 170 Z"
+stroke="#B6FF00"
+stroke-width="3"
+fill="none"/>
+</svg>
+
+<svg class="right-shape" viewBox="0 0 400 400">
+<path d="M40 80 L120 80 L160 160 L70 250 L180 250 L330 80 L220 80 L120 170 L40 170 Z"
+stroke="#B6FF00"
+stroke-width="3"
+fill="none"/>
+</svg>
+
+<!-- BOTTOM LINES -->
+
+<div class="lines">
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+
+<!-- MAIN -->
+
+<div class="container">
+
+    <!-- LOGO -->
+
+    <svg class="logo-icon" viewBox="0 0 180 140">
+        <polygon points="25,20 95,20 60,75 120,75 80,125 10,125 45,70 0,70"
+        fill="#B6FF00"/>
+
+        <polygon points="110,20 180,20 130,125 65,125"
+        fill="#B6FF00"/>
+    </svg>
+
+    <!-- TITLE -->
+
+    <div class="title">
+        <h1>MOTION</h1>
+        <h2>CLUB</h2>
+    </div>
+
+    <!-- LOADER -->
+
+    <div class="loader"></div>
+
+    <!-- TEXT -->
+
+    <div class="loading-text">
+        Carregando sua <span>melhor experiência...</span>
+    </div>
+
+    <!-- ICONS -->
+
+    <div class="icons">
+
+        <div class="icon">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M13 5.5A2.5 2.5 0 1 1 8 5.5A2.5 2.5 0 0 1 13 5.5ZM6 22L9 13L6 11L7.5 9L10 11L13 11L15 14L17 13L18 15L14 17L12 22H6Z"/>
+            </svg>
+
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="icon">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M16 11C17.66 11 18.99 9.66 18.99 8S17.66 5 16 5 13 6.34 13 8 14.34 11 16 11ZM8 11C9.66 11 10.99 9.66 10.99 8S9.66 5 8 5 5 6.34 5 8 6.34 11 8 11ZM8 13C5.67 13 1 14.17 1 16.5V19H15V16.5C15 14.17 10.33 13 8 13ZM16 13C15.71 13 15.38 13.02 15.03 13.05C16.19 13.89 17 15.02 17 16.5V19H23V16.5C23 14.17 18.33 13 16 13Z"/>
+            </svg>
+
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="icon">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M17 3H7V7H3V11C3 13.55 4.92 15.63 7.39 15.95C8.19 17.92 9.92 19.31 12 19.75V23H16V19.75C18.08 19.31 19.81 17.92 20.61 15.95C23.08 15.63 25 13.55 25 11V7H21V3H17ZM5 11V9H7V13.82C5.84 13.4 5 12.3 5 11ZM19 14C19 16.76 16.76 19 14 19H10C7.24 19 5 16.76 5 14V5H19V14ZM21 13.82V9H23V11C23 12.3 22.16 13.4 21 13.82Z"/>
+            </svg>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+        Movimente-se. <span>Conecte-se.</span> Supere-se.
+    </div>
+
+</div>
+
+</body>
+</html>
