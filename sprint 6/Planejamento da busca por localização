@@ -1,0 +1,36 @@
+# Desenvolvimento do Sistema de Busca por Localização – sprint 6
+
+O sistema de busca por localização foi desenvolvido para permitir que usuários encontrem grupos e eventos esportivos 
+próximos de sua região dentro da plataforma.
+
+## SB01 – Busca por localização
+
+O sistema deve permitir que o usuário pesquise grupos e eventos utilizando bairro, cidade ou região.
+
+## SB02 – Filtro por esporte
+
+O usuário deve poder filtrar os resultados de acordo com a modalidade esportiva desejada.
+
+## SB03 – Exibição de resultados
+
+O sistema deve exibir na tela os grupos e eventos encontrados após a pesquisa.
+
+## SB04 – Integração com banco de dados
+
+O sistema deve consultar automaticamente as informações cadastradas no banco de dados da plataforma.
+
+## SB05 – Informações dos grupos
+
+O sistema deve apresentar informações básicas dos grupos encontrados, como nome, esporte e localização.
+
+## SB06 – Interface intuitiva
+
+A tela de busca deve possuir uma interface simples, moderna e alinhada à identidade visual do Motion Club.
+
+## SB07 – Atualização dinâmica
+
+Os resultados da busca devem ser atualizados automaticamente conforme a pesquisa realizada pelo usuário.
+
+## SB08 – Compatibilidade com diferentes dispositivos
+
+O sistema de busca deve funcionar corretamente em computadores e dispositivos móveis.
