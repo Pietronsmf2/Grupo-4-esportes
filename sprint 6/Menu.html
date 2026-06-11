@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Motion Club Sidebar</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#000;
+    height:100vh;
+}
+
+/* MENU */
+
+.sidebar{
+
+    width:280px;
+    height:100vh;
+
+    background:#050505;
+
+    border-right:1px solid #111;
+
+    padding:34px 22px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+}
+
+/* LOGO */
+
+.logo{
+    margin-bottom:40px;
+}
+
+.logo h1{
+
+    font-size:42px;
+    font-weight:900;
+
+    font-style:italic;
+
+    letter-spacing:-2px;
+
+    line-height:42px;
+
+    text-transform:uppercase;
+
+    color:white;
+}
+
+.logo span{
+    color:#B6FF00;
+}
+
+.logo p{
+
+    margin-top:10px;
+
+    color:#666;
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+}
+
+/* ITENS */
+
+.menu{
+    width:100%;
+}
+
+.item{
+
+    width:100%;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+
+    gap:18px;
+
+    padding:0 20px;
+
+    border-radius:18px;
+
+    margin-bottom:12px;
+
+    color:#d6d6d6;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.item:hover{
+    background:#101010;
+}
+
+.item.active{
+
+    background:#B6FF00;
+
+    color:black;
+
+    font-weight:700;
+}
+
+.item svg{
+    width:22px;
+    height:22px;
+}
+
+.item span{
+    font-size:16px;
+}
+
+/* FOOTER */
+
+.footer{
+
+    border-top:1px solid #111;
+
+    padding-top:22px;
+}
+
+.profile{
+
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+}
+
+.profile img{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    border:2px solid #B6FF00;
+
+    object-fit:cover;
+}
+
+.profile-info h3{
+
+    color:white;
+
+    font-size:15px;
+
+    margin-bottom:3px;
+}
+
+.profile-info p{
+
+    color:#666;
+
+    font-size:12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+    <!-- LOGO -->
+
+    <div>
+
+        <div class="logo">
+
+            <h1>
+                MOTION <span>CLUB</span>
+            </h1>
+
+            <p>
+                Movimento que conecta
+            </p>
+
+        </div>
+
+        <!-- MENU -->
+
+        <div class="menu">
+
+            <div class="item active">
+
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 10.5L12 3l9 7.5"/>
+                    <path d="M5 9.5V21h14V9.5"/>
+                </svg>
+
+                <span>Home</span>
+
+            </div>
+
+            <div class="item">
+
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="3" y="5" width="18" height="16" rx="2"/>
+                    <path d="M16 3v4M8 3v4M3 11h18"/>
+                </svg>
+
+                <span>Eventos</span>
+
+            </div>
+
+            <div class="item">
+
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M17 11c2.2 0 4 1.8 4 4v2"/>
+                    <path d="M2 20v-2c0-2.2 1.8-4 4-4h6c2.2 0 4 1.8 4 4v2"/>
+                </svg>
+
+                <span>Grupos</span>
+
+            </div>
+
+            <div class="item">
+
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+
+                <span>Chat</span>
+
+            </div>
+
+            <div class="item">
+
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="12" cy="7" r="4"/>
+                    <path d="M5.5 21a6.5 6.5 0 0 1 13 0"/>
+                </svg>
+
+                <span>Perfil</span>
+
+            </div>
+
+            <div class="item">
+
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                </svg>
+
+                <span>Notificações</span>
+
+            </div>
+
+            <div class="item">
+
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
+
+                <span>Configurações</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PERFIL -->
+
+    <div class="footer">
+
+        <div class="profile">
+
+            <img src="https://i.pravatar.cc/100" alt="">
+
+            <div class="profile-info">
+
+                <h3>
+                    Lucas Oliveira
+                </h3>
+
+                <p>
+                    @lucasoliveira
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+</body>
+</html>
