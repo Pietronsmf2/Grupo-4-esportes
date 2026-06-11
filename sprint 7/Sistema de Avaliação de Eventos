@@ -1,0 +1,52 @@
+# Sistema de Avaliação de Eventos
+
+## Contexto
+
+Uma das formas mais eficientes de melhorar a qualidade de uma comunidade é permitir que seus próprios participantes compartilhem experiências e opiniões sobre as atividades realizadas.
+
+No Motion Club, o sistema de avaliação foi pensado como uma ferramenta de melhoria contínua. Além de auxiliar usuários na escolha de eventos, ele também fornece informações importantes para organizadores que desejam aprimorar suas atividades futuras.
+
+## Como Funcionará
+
+Após a conclusão de um evento, os participantes poderão registrar uma avaliação referente à experiência vivenciada.
+
+Essa avaliação permitirá que futuros participantes tenham uma percepção mais clara sobre a qualidade dos eventos organizados na plataforma.
+
+## Aspectos Avaliados
+
+### Organização
+
+Os participantes poderão avaliar aspectos relacionados ao planejamento e execução da atividade.
+
+Exemplos:
+
+- Cumprimento dos horários;
+- Clareza das informações;
+- Comunicação do organizador;
+- Estrutura do evento.
+
+### Experiência Geral
+
+O sistema também permitirá que os usuários avaliem sua satisfação geral com a atividade realizada.
+
+Essa informação servirá como um indicador da qualidade percebida pelos participantes.
+
+### Ambiente da Comunidade
+
+Outro fator importante será a avaliação da interação entre os participantes.
+
+Como o Motion Club possui forte foco social, a experiência da comunidade é considerada tão importante quanto a atividade esportiva em si.
+
+## Benefícios Esperados
+
+A implementação desse sistema pode gerar diversos benefícios para a plataforma:
+
+- Maior transparência entre usuários;
+- Incentivo à criação de eventos de qualidade;
+- Melhoria contínua das atividades;
+- Aumento da confiança na comunidade;
+- Maior engajamento dos participantes.
+
+## Impacto no Projeto
+
+Ao permitir que a própria comunidade contribua com feedbacks, o Motion Club fortalece sua proposta de construir um ambiente colaborativo, onde usuários participam ativamente da evolução da plataforma.
