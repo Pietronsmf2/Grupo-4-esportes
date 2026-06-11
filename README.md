@@ -89,7 +89,10 @@ Projeto desenvolvido pelo **Grupo 4 — Esportes**.
 | Integrante | GitHub |
 |---|---|
 | Pietro Novello | [@Pietronsmf2](https://github.com/Pietronsmf2) |
-| *(adicionar demais integrantes)* | |
+| Caua Carnovali | [@cauacarnovali1-hue](https://github.com/cauacarnovali1-hue) |
+| Artur Gutierrez | [@arturgutierrez](https://github.com/arturgutierrez) |
+| Antonio Varejao | [@antoniovarejao](https://github.com/antoniovarejao) |
+
 
 ## 📄 Licença
 
