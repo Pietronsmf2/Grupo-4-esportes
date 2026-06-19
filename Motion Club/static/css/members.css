@@ -1,0 +1,608 @@
+/* =====================================================================
+   MOTION CLUB — members.css
+   User CRUD pages: list, form, profile (metrics), delete.
+   ===================================================================== */
+
+.page-section {
+  padding-block: clamp(34px, 5vw, 64px) clamp(64px, 9vw, 110px);
+}
+
+.page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+.page-head .section-title {
+  font-size: clamp(1.9rem, 4.6vw, 3.2rem);
+}
+.back-link {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+  transition: color var(--t-fast);
+}
+.back-link:hover {
+  color: var(--green);
+}
+
+/* ---------- Avatar ---------- */
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar--lg {
+  width: 56px;
+  height: 56px;
+  font-size: 1.05rem;
+}
+.avatar--xl {
+  width: 96px;
+  height: 96px;
+  font-size: 2.1rem;
+}
+
+/* ---------- Toolbar / search ---------- */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 34px;
+  flex-wrap: wrap;
+}
+.search {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  transition: border-color var(--t-fast);
+}
+.search:focus-within {
+  border-color: var(--green);
+}
+.search svg {
+  color: var(--faint);
+  flex-shrink: 0;
+}
+.search input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 14px 0;
+  color: var(--text);
+}
+.toolbar__count {
+  color: var(--faint);
+  font-size: 0.85rem;
+  margin-left: auto;
+}
+
+/* ---------- Member grid (list) ---------- */
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 16px;
+}
+.member-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform var(--t) var(--ease), border-color var(--t),
+    background var(--t);
+}
+.member-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(198, 245, 56, 0.4);
+  background: var(--surface-2);
+}
+.member-card__main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.member-card__id strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.member-card__id em {
+  font-style: normal;
+  color: var(--faint);
+  font-size: 0.82rem;
+}
+.member-card__sports {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 24px;
+}
+.member-card__metrics {
+  display: flex;
+  gap: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.member-card__metrics strong {
+  color: var(--green);
+  font-family: var(--font-display);
+}
+.member-card__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+.member-card__actions .btn {
+  flex: 1;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: clamp(40px, 7vw, 72px);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ---------- Profile (detail) ---------- */
+.profile {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 28px;
+  align-items: start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 36px;
+}
+.profile__id .eyebrow {
+  color: var(--faint);
+}
+.profile__name {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 12px 0 8px;
+}
+.profile__meta {
+  color: var(--muted);
+}
+.profile__bio {
+  color: var(--muted);
+  margin-top: 14px;
+  max-width: 60ch;
+}
+.profile__sports {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+/* ---------- Metrics ---------- */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+}
+.metric {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.metric::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--green);
+  opacity: 0.6;
+}
+.metric__num {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--green);
+}
+.metric__label {
+  display: block;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.metric__hint {
+  display: block;
+  color: var(--faint);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* ---------- Panels ---------- */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  margin-top: 18px;
+}
+.panel__title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+/* bars */
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.bar {
+  display: grid;
+  grid-template-columns: 120px 1fr 36px;
+  align-items: center;
+  gap: 14px;
+}
+.bar__label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.bar__track {
+  height: 10px;
+  background: var(--surface-3);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.bar__fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  min-width: 6px;
+  background: linear-gradient(90deg, var(--green-strong), var(--green));
+  transform-origin: left;
+  animation: bar-grow 0.9s var(--ease) both;
+}
+@keyframes bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+.bar__value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--green);
+  text-align: right;
+}
+
+/* people */
+.people {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.people li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background var(--t-fast);
+}
+.people li a:hover {
+  background: var(--surface-2);
+}
+.people__id strong {
+  display: block;
+  font-size: 0.92rem;
+}
+.people__id em {
+  font-style: normal;
+  color: var(--green);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* activity */
+.activity {
+  display: flex;
+  flex-direction: column;
+}
+.activity__row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+.activity__row:first-child {
+  border-top: none;
+}
+.activity__what {
+  font-size: 0.95rem;
+}
+.activity__date {
+  color: var(--faint);
+  font-size: 0.82rem;
+}
+
+/* ---------- Card / forms ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 4vw, 40px);
+}
+.form .field {
+  margin-bottom: 20px;
+}
+.form label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.input {
+  width: 100%;
+  padding: 15px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 1rem;
+  transition: border-color var(--t-fast), background var(--t-fast),
+    box-shadow var(--t-fast);
+}
+.input::placeholder {
+  color: var(--faint);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--green);
+  background: rgba(198, 245, 56, 0.045);
+  box-shadow: 0 0 0 3px var(--green-soft);
+}
+textarea.input {
+  resize: vertical;
+  min-height: 92px;
+}
+select.input {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%239a9a9a' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+select.input option {
+  background: var(--surface-2);
+  color: var(--text);
+}
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.checkbox-grid > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+}
+.checkbox-grid label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  margin: 0;
+  padding: 11px 13px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text);
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+.checkbox-grid label:hover {
+  border-color: var(--line-strong);
+  background: var(--surface-3);
+}
+.checkbox-grid input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--green);
+  flex-shrink: 0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.form-actions--center {
+  justify-content: center;
+}
+
+/* ---------- Social / connect states ---------- */
+.connect-form {
+  flex: 1;
+  display: flex;
+}
+.connect-form .btn {
+  width: 100%;
+}
+.btn--connected {
+  background: var(--green-soft);
+  color: var(--green);
+  border-color: rgba(198, 245, 56, 0.35);
+}
+.btn--connected:hover {
+  background: rgba(198, 245, 56, 0.2);
+}
+.btn--self {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--faint);
+  cursor: default;
+  pointer-events: none;
+}
+.form-foot-note {
+  text-align: center;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.form-foot-note a {
+  color: var(--green);
+  font-weight: 700;
+}
+.form-errors {
+  background: rgba(255, 81, 104, 0.1);
+  border: 1px solid rgba(255, 81, 104, 0.3);
+  color: #ffb3bd;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+}
+.field-error {
+  display: block;
+  color: #ff8a98;
+  font-size: 0.8rem;
+  margin-top: 6px;
+}
+
+/* File upload (avatar PNG) */
+.input-file {
+  width: 100%;
+  padding: 11px 14px;
+  background: var(--surface-2);
+  border: 1px dashed var(--line-strong);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+.input-file::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-family: var(--font-body);
+  font-weight: 700;
+  cursor: pointer;
+}
+.input-file::file-selector-button:hover {
+  background: rgba(198, 245, 56, 0.22);
+}
+
+/* ---------- Danger / delete ---------- */
+.danger-card {
+  text-align: center;
+  max-width: 540px;
+  margin-inline: auto;
+}
+.danger-card__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 22px;
+  background: rgba(255, 81, 104, 0.12);
+  color: var(--danger);
+}
+.danger-card h1 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.danger-card p {
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .profile {
+    grid-template-columns: auto 1fr;
+  }
+  .profile__actions {
+    grid-column: 1 / -1;
+  }
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .profile {
+    grid-template-columns: 1fr;
+  }
+  .bar {
+    grid-template-columns: 90px 1fr 30px;
+    gap: 10px;
+  }
+  .member-card__actions {
+    flex-direction: column;
+  }
+}
