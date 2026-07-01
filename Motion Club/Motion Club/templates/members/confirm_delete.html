@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Excluir minha conta — Motion Club{% endblock %}
+{% block body_class %}page{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/members.css' %}" />{% endblock %}
+
+{% block content %}
+<section class="section page-section">
+  <div class="container container--narrow">
+    <div class="card danger-card">
+      <div class="danger-card__icon" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"/></svg>
+      </div>
+      <h1>Excluir minha conta?</h1>
+      <p>
+        Tem certeza que deseja excluir <strong>a sua conta</strong>
+        ({{ member.email }})? Isso remove seu perfil, suas conexões e suas
+        participações. Esta ação não pode ser desfeita.
+      </p>
+      <form method="post" action="{% url 'account_delete' %}">
+        {% csrf_token %}
+        <div class="form-actions form-actions--center">
+          <a href="{{ member.get_absolute_url }}" class="btn btn--outline">Cancelar</a>
+          <button type="submit" class="btn btn--danger">Sim, excluir minha conta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

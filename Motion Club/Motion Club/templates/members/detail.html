@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ member.name }} — Motion Club{% endblock %}
+{% block body_class %}page{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/members.css' %}" />{% endblock %}
+
+{% block content %}
+<section class="section page-section">
+  <div class="container">
+    <a href="{% url 'member_list' %}" class="back-link">← Voltar para usuários</a>
+
+    <header class="profile">
+      <span class="avatar avatar--xl">{% if member.avatar %}<img src="{{ member.avatar.url }}" alt="" />{% else %}{{ member.initials }}{% endif %}</span>
+      <div class="profile__id">
+        <span class="eyebrow">{% if is_self %}Seu perfil · {% endif %}{{ member.get_level_display }} · entrou em {{ member.joined_at|date:"b Y" }}</span>
+        <h1 class="profile__name">{{ member.name }}</h1>
+        <p class="profile__meta">{{ member.email }}{% if member.city %} · {{ member.city }}{% endif %}</p>
+        {% if member.bio %}<p class="profile__bio">{{ member.bio }}</p>{% endif %}
+        <div class="profile__sports">
+          {% for s in member.favorite_sports.all %}<span class="chip">{{ s.name }}</span>{% empty %}<span class="muted-text">Sem modalidades de preferência</span>{% endfor %}
+        </div>
+      </div>
+      <div class="profile__actions">
+        {% if is_self %}
+          <a href="{% url 'member_edit' %}" class="btn btn--outline">Editar perfil</a>
+          <a href="{% url 'account_delete' %}" class="btn btn--ghost-danger">Excluir minha conta</a>
+        {% elif current_member %}
+          <form method="post" action="{% url 'connect' member.pk %}">
+            {% csrf_token %}
+            {% if is_connected %}
+              <button type="submit" class="btn btn--connected">✓ Conectado</button>
+            {% else %}
+              <button type="submit" class="btn btn--primary">Conectar</button>
+            {% endif %}
+          </form>
+        {% else %}
+          <a href="{% url 'login' %}" class="btn btn--outline">Entrar para conectar</a>
+        {% endif %}
+      </div>
+    </header>
+
+    <!-- ===== Métricas ===== -->
+    <div class="metrics">
+      <div class="metric">
+        <span class="metric__num">{{ member.participation_count }}</span>
+        <span class="metric__label">Participações</span>
+        <span class="metric__hint">vezes que treinou ou competiu</span>
+      </div>
+      <div class="metric">
+        <span class="metric__num">{{ member.connection_count }}</span>
+        <span class="metric__label">Pessoas conhecidas</span>
+        <span class="metric__hint">conexões feitas no esporte</span>
+      </div>
+      <div class="metric">
+        <span class="metric__num">{{ member.group_count }}</span>
+        <span class="metric__label">Grupos</span>
+        <span class="metric__hint">grupos de que participa</span>
+      </div>
+      <div class="metric">
+        <span class="metric__num">{{ member.favorite_sports.count }}</span>
+        <span class="metric__label">Modalidades</span>
+        <span class="metric__hint">esportes de preferência</span>
+      </div>
+    </div>
+
+    <div class="profile-grid">
+      <!-- Participações por esporte -->
+      <section class="panel">
+        <h2 class="panel__title">Participações por esporte</h2>
+        {% if breakdown %}
+          <ul class="bars">
+            {% for sport, count in breakdown %}
+              <li class="bar">
+                <span class="bar__label">{{ sport.name }}</span>
+                <span class="bar__track"><span class="bar__fill" style="width: {% widthratio count max_count 100 %}%"></span></span>
+                <span class="bar__value">{{ count }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p class="muted-text">Sem participações registradas ainda.</p>
+        {% endif %}
+      </section>
+
+      <!-- Conexões -->
+      <section class="panel">
+        <h2 class="panel__title">Conheceu no esporte</h2>
+        {% if member.connections.all %}
+          <ul class="people">
+            {% for c in member.connections.all %}
+              <li>
+                <a href="{{ c.get_absolute_url }}">
+                  <span class="avatar">{% if c.avatar %}<img src="{{ c.avatar.url }}" alt="" />{% else %}{{ c.initials }}{% endif %}</span>
+                  <span class="people__id"><strong>{{ c.name }}</strong>{% if c.top_sport %}<em>{{ c.top_sport.name }}</em>{% endif %}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p class="muted-text">Ainda não conheceu ninguém por aqui.</p>
+        {% endif %}
+      </section>
+    </div>
+
+    <!-- Atividade recente -->
+    <section class="panel">
+      <h2 class="panel__title">Atividade recente</h2>
+      {% if recent %}
+        <ul class="activity">
+          {% for p in recent %}
+            <li class="activity__row">
+              <span class="chip chip--muted">{{ p.sport.name }}</span>
+              <span class="activity__what">{% if p.event %}{{ p.event.title }}{% elif p.group %}{{ p.group.name }}{% else %}Treino livre{% endif %}</span>
+              <span class="activity__date">{{ p.date|date:"d b Y" }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="muted-text">Nenhuma atividade registrada.</p>
+      {% endif %}
+    </section>
+  </div>
+</section>
+{% endblock %}
